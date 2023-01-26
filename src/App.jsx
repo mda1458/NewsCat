@@ -22,24 +22,6 @@ export default class App extends Component {
           <Route path="/health" element={<News category="Health Headlines"/>} />
           <Route path="/science" element={<News category="Science Headlines"/>} />
           <Route path="/technology" element={<News category="Technology Headlines"/>} />
-          {/* <Route path="/business">
-            <News category="Business Headlines"/>
-          </Route>
-          <Route path="/sports">
-            <News category="Sports Headlines" />
-          </Route>
-          <Route path="/entertainment">
-            <News category="Entertainment Headlines" />
-          </Route>
-          <Route path="/health">
-            <News category="Health Headlines" />
-          </Route>
-          <Route path="/science">
-            <News category="Science Headlines" />
-          </Route>
-          <Route path="/technology">
-            <News category="Technology Headlines" />
-          </Route> */}
         </Routes>
         <Footer/>
       </Router>
