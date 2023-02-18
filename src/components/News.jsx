@@ -58,37 +58,37 @@ export class News extends Component {
     filterUrl(category){
       let url = "";
       if (category==="Top 12 Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       else if (category==="Business Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&category=business&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       else if (category==="Entertainment Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&category=entertainment&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&category=entertainment&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       else if (category==="Sports Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&category=sports&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&category=sports&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       else if (category==="Health Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&category=health&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&category=health&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       else if (category==="Science Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&category=science&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&category=science&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       else if (category==="Technology Headlines"){
-        url = "https://newsapi.org/v2/top-headlines?country=us&category=technology&apiKey=dd94936600b94889990bc1ebdc4cd939";
+        url = "https://newsapi.org/v2/top-headlines?language=en&category=technology&apiKey=dd94936600b94889990bc1ebdc4cd939";
       }
       return url;
     }
     componentDidMount(){
-      this.setState({category: this.props.category});
+      this.setState({category: this.props.category, page: 1});
       let url = this.filterUrl(this.props.category);
       this.newsGen(url,1);
     }
     componentDidUpdate(){
       if (this.state.category !== this.props.category){
         document.title = `NewsCat ⦿ ${this.props.category}`;
-        this.setState({category: this.props.category});
+        this.setState({category: this.props.category, page: 1});
         let url = this.filterUrl(this.props.category);
         this.newsGen(url,1);
       }
