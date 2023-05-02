@@ -4,7 +4,3 @@ Done this project just as a practice of React concepts.
 - React Hooks
 - React Router
 - React Context
-
-# Demo
-
-![Demo](./NewsCat.gif)
